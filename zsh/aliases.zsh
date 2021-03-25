@@ -1,0 +1,35 @@
+# Basic
+alias la='ls -hal'
+alias ..='cd ..'
+alias extract='unrar e'
+alias gist='gist -p -c'
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias kan='killall node'
+alias psgrep='ps aux | grep'
+alias prettyclip='pbpaste | jq .'
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+alias grunt='./node_modules/.bin/grunt'
+
+# Git aliases
+alias gl='git pull --prune'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gp='git push -u origin HEAD'
+alias gfp='git push origin $(git branch-name) --force-with-lease'
+alias gd='git diff'
+alias gsd='git difftool --extcmd icdiff'
+alias gdd='git difftool'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gb='git co -b'
+alias gs='git status -sb'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gpop='git checkout -'
+alias gcm='git checkout master'
+alias gcb='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+alias grbm='git rebase -i master'
+# alias gpr='open "$(git config --get remote.origin.url | sed '\''s#github.com:#github.com/#'\'' | sed '\''s#git@#https://#'\'' | rev | cut -f 2- -d'\''.'\'' | rev )/compare/$(git branch-name)?expand=1"'
+alias gpr='open "https://github.com/$(git config --get remote.origin.url | cut -d'\'':'\'' -f 2 | rev | cut -f 2- -d'\''.'\'' | rev)/compare/$(git branch-name)?expand=1"'
+alias gsp='git stash pop'
+alias gauf='git add $(git ls-files -o --exclude-standard)'
+alias gsc='git diff --name-only --diff-filter=U'
