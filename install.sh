@@ -1,11 +1,10 @@
-mkdir ~/.zsh
+ln -sf ~/dotfiles/zsh ~/.zsh
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 curl -L git.io/antigen > ~/.zsh/antigen.zsh
 
 ln -sf ~/dotfiles/zshrc ~/.zshrc
-ln -sf ~/dotfiles/zsh ~/.zsh
 
 source ~/.zshrc
 
