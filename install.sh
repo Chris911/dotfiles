@@ -8,6 +8,6 @@ ln -sf ~/dotfiles/zshrc ~/.zshrc
 
 source ~/.zshrc
 
-printf '\n%s\n\t%s\n' '[alias]' 'co = checkout' >> ~/.gitconfig
+printf '\n%s\n\t%s\n\t%s\n' '[alias]' 'co = checkout' 'branch-name = "!git rev-parse --abbrev-ref HEAD"' >> ~/.gitconfig
 
 exit 0

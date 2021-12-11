@@ -11,6 +11,7 @@ alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resour
 alias grunt='./node_modules/.bin/grunt'
 
 # Git aliases
+alias gmb='echo $(git symbolic-ref refs/remotes/origin/HEAD | sed ''s@^refs/remotes/origin/@@'')'
 alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push -u origin HEAD'
@@ -25,9 +26,9 @@ alias gb='git co -b'
 alias gs='git status -sb'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gpop='git checkout -'
-alias gcm='git checkout master'
-alias gcb='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
-alias grbm='git rebase -i master'
+alias gcm='git checkout $(gmb)'
+alias gcb='git branch --merged $(gmb) | grep -v "\* $(gmb)" | xargs -n 1 git branch -d'
+alias grbm='git rebase -i $(gmb)'
 # alias gpr='open "$(git config --get remote.origin.url | sed '\''s#github.com:#github.com/#'\'' | sed '\''s#git@#https://#'\'' | rev | cut -f 2- -d'\''.'\'' | rev )/compare/$(git branch-name)?expand=1"'
 alias gpr='open "https://github.com/$(git config --get remote.origin.url | cut -d'\'':'\'' -f 2 | rev | cut -f 2- -d'\''.'\'' | rev)/compare/$(git branch-name)?expand=1"'
 alias gsp='git stash pop'
