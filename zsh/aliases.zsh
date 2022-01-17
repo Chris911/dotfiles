@@ -37,6 +37,8 @@ alias gsc='git diff --name-only --diff-filter=U'
 
 # Spin
 if [ "$SPIN" ]; then
+    alias sc='systemctl'
+    alias jc='journalctl'
     alias procs='systemctl list-units "proc*"'
     alias core-stop='systemctl stop proc-shopify--shopify@server.service'
     alias sfr-stop='systemctl stop proc-shopify--storefront-renderer@server.service'
