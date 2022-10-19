@@ -5,6 +5,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -L git.io/antigen > ~/.zsh/antigen.zsh
 
 ln -sf ~/dotfiles/zshrc ~/.zshrc
+ln -sf ~/dotfiles/pryrc ~/.pryrc
 
 source ~/.zshrc
 
