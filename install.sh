@@ -11,6 +11,8 @@ source ~/.zshrc
 
 printf '\n%s\n\t%s\n\t%s\n' '[alias]' 'co = checkout' 'branch-name = "!git rev-parse --abbrev-ref HEAD"' >> ~/.gitconfig
 
+cartridge insert default
+
 SHOPIFY_DIR="${HOME}/src/github.com/Shopify/shopify"
 SCRIPT="${HOME}/.data/cartridges/default/seed.sh"
 
