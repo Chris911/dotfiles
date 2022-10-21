@@ -17,6 +17,7 @@ SHOPIFY_DIR="${HOME}/src/github.com/Shopify/shopify"
 SCRIPT="${HOME}/.data/cartridges/default/seed.sh"
 
 cd ${SHOPIFY_DIR}
+shadowenv trust
 shadowenv exec --dir ${SHOPIFY_DIR} -- ${SCRIPT}
 
 exit 0
