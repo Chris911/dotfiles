@@ -47,4 +47,5 @@ if [ "$SPIN" ]; then
     alias debug-sfr='PRY=1 bundle exec rake server_isospin'
     alias sfr-logs='journalctl -fu proc-shopify--storefront-renderer@server.service'
     alias core-logs='journalctl -fu proc-shopify--shopify@server.service'
+    alias setup='cd /home/spin/src/github.com/Shopify/shopify && shadowenv exec --dir /home/spin/src/github.com/Shopify/shopify -- /home/spin/.data/cartridges/default/seed.sh'
 fi
