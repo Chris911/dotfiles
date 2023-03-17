@@ -69,6 +69,17 @@ default_command_set = Pry::CommandSet.new do
       pp "No rails env defined"
     end
   end
+
+  # Show the stack, only including lines from the current project
+  command "stack", "caller, only including lines from the current project" do
+    output.puts (
+      caller
+        .grep_v(/\/lib\/(pry|byebug)\//)
+        .map
+        .with_index {|v, i| "#{(i-1).to_s.rjust(4)}: #{v}"}
+        .grep(/\/src\//)
+    ).join("\n")
+  end
 end
 
 Pry.config.commands.import default_command_set
