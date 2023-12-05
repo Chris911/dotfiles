@@ -6,6 +6,7 @@ curl -L git.io/antigen > ~/.zsh/antigen.zsh
 
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/pryrc ~/.pryrc
+ln -sf ~/dotfiles/histfile ~/.histfile
 
 source ~/.zshrc
 
