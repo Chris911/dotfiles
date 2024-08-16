@@ -4,15 +4,13 @@ alias ..='cd ..'
 alias extract='unrar e'
 alias gist='gist -p -c'
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-alias kan='killall node'
 alias psgrep='ps aux | grep'
 alias prettyclip='pbpaste | jq .'
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-alias grunt='./node_modules/.bin/grunt'
 
 # Git aliases
 alias gmb='echo $(git symbolic-ref refs/remotes/origin/HEAD | sed ''s@^refs/remotes/origin/@@'')'
-alias gl='git pull --prune'
+alias gl=' git pull origin $(gmb) --prune --no-recurse-submodules'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push -u origin HEAD'
 alias gfp='git push origin $(git branch-name) --force-with-lease'
