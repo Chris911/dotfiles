@@ -1,9 +1,7 @@
 source ~/.zsh/antigen.zsh
 
 antigen use oh-my-zsh
-
 antigen bundle zsh-users/zsh-autosuggestions
-
 antigen apply
 
 # Path to your oh-my-zsh installation.
@@ -46,10 +44,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh/aliases.zsh
-
-if [ "$SPIN" ]; then
-  PROMPT="[spin] "$PROMPT
-fi
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
